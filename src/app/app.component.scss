@@ -1,0 +1,17 @@
+@import '../globals.scss';
+
+.app-header {
+
+  &--background {
+    background-color: $primary-theme;
+    display: inline-block;
+    width: 100%;
+  }
+
+  &--text {
+    color: $primary-text;
+    margin: 25px 0px 25px 50px;
+    font-size: $font-size-xlg;
+    line-height: $font-size-xlg;
+  }
+}
