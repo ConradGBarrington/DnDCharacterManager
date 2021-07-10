@@ -1,0 +1,12 @@
+@import '../../../globals.scss';
+
+.login-form {
+
+  width: 40%;
+  margin: $element-spacing auto;
+
+  &--holder {
+    display: flex;
+    flex-direction: column;
+  }
+}
