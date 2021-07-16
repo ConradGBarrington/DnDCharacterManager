@@ -1,0 +1,33 @@
+@import '../../../globals.scss';
+
+.character-list {
+  margin: $element-spacing 0;
+
+  &--topbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+  }
+
+  &--title {
+    width: 100%;
+    font-size: $page-header;
+  }
+
+  &--field {
+    margin-right: auto;
+    font-size: $font-size-field;
+  }
+
+  &--add {
+    margin-left: auto;
+    justify-self: flex-end;
+    margin: auto, 0, auto, auto;
+    font-size: $font-size-field;
+  }
+
+  &--item {
+    font-size: $font-size-field;
+  }
+}

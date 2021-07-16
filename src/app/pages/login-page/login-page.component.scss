@@ -5,6 +5,19 @@
   width: 40%;
   margin: $element-spacing auto;
 
+  &--title {
+    font-size: $page-header;
+    width: 100%;
+  }
+
+  &--field {
+    font-size: $font-size-field;
+  }
+
+  &--submit {
+    font-size: $font-size-field;
+  }
+
   &--holder {
     display: flex;
     flex-direction: column;

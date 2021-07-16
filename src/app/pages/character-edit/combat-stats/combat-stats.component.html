@@ -1,0 +1,16 @@
+<div class='character-edit--combat-stats'>
+  <h3 class='character-edit--header'>Combat Stats</h3>
+  <p class='character-edit--text'>Initiative: {{character.initiative}}</p>
+  <mat-form-field class='character-edit--field'>
+    <input matNativeControl type='number' placeholder='Speed' [(ngModel)]='character.speed'>
+  </mat-form-field>
+  <mat-form-field class='character-edit--field'>
+    <mat-label>Hit Dice</mat-label>
+    <mat-select [(ngModel)]='character.hitDice' (ngModelChange)='hitDiceChange()'>
+      <mat-option *ngFor="let hitDie of hitDice" [value]="hitDie">
+        {{hitDie.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <p class='character-edit--text'>Hitpoint Maximum: {{hitpointMaximum}}</p>
+</div>

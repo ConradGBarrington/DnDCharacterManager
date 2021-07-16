@@ -1,0 +1,270 @@
+<div class='character-edit--ability-scores'>
+  <h3 class='character-edit--header'>Ability Scores</h3>
+  <div class='character-edit--ability'>
+    <mat-form-field class='character-edit--field'>
+      <input matNativeControl type='number' min=0 placeholder='Strength' [(ngModel)]="character.strength" (ngModelChange)="abilityChange(0)">
+    </mat-form-field>
+    <p class='character-edit--modifier'>Modifier: {{strengthModifier}}</p>
+  </div>
+  <div class='character-edit--ability'>
+    <mat-form-field class='character-edit--field'>
+      <input matNativeControl type='number' min=0 placeholder='Dexterity' [(ngModel)]="character.dexterity" (ngModelChange)="abilityChange(1)">
+    </mat-form-field>
+    <p class='character-edit--modifier'>Modifier: {{dexterityModifier}}</p>
+  </div>
+  <div class='character-edit--ability'>
+    <mat-form-field class='character-edit--field'>
+      <input matNativeControl type='number' min=0 placeholder='Constitution' [(ngModel)]="character.constitution" (ngModelChange)="abilityChange(2)">
+    </mat-form-field>
+    <p class='character-edit--modifier'>Modifier: {{constitutionModifier}}</p>
+  </div>
+  <div class='character-edit--ability'>
+    <mat-form-field class='character-edit--field'>
+      <input matNativeControl type='number' min=0 placeholder='Intelligence' [(ngModel)]="character.intelligence" (ngModelChange)="abilityChange(3)">
+    </mat-form-field>
+    <p class='character-edit--modifier'>Modifier: {{intelligenceModifier}}</p>
+  </div>
+  <div class='character-edit--ability'>
+    <mat-form-field class='character-edit--field'>
+      <input matNativeControl type='number' min=0 placeholder='Wisdom' [(ngModel)]="character.wisdom" (ngModelChange)="abilityChange(4)">
+    </mat-form-field>
+    <p class='character-edit--modifier'>Modifier: {{wisdomModifier}}</p>
+  </div>
+  <div class='character-edit--ability'>
+    <mat-form-field class='character-edit--field'>
+      <input matNativeControl type='number' min=0 placeholder='Charisma' [(ngModel)]="character.charisma" (ngModelChange)="abilityChange(5)">
+    </mat-form-field>
+    <p class='character-edit--modifier'>Modifier: {{charismaModifier}}</p>
+  </div>
+</div>
+<mat-divider [inset]="true"></mat-divider>
+<div class='character-edit--saving-throws'>
+  <h3 class='character-edit--header'>Saving Throws</h3>
+  <div class="character-edit--saving-throw">
+    <mat-checkbox class="character-edit--saving-throw--proficiency" [(ngModel)]="character.strengthSavingThrowProficiency" (ngModelChange)="savingThrowChange(0)">Strength</mat-checkbox>
+    <p class="character-edit--saving-throw--value">{{strengthSavingThrow}}</p>
+  </div>
+  <div class="character-edit--saving-throw">
+    <mat-checkbox class="character-edit--saving-throw--proficiency" [(ngModel)]="character.dexteritySavingThrowProficiency" (ngModelChange)="savingThrowChange(1)">Dexterity</mat-checkbox>
+    <p class="character-edit--saving-throw--value">{{dexteritySavingThrow}}</p>
+  </div>
+  <div class="character-edit--saving-throw">
+    <mat-checkbox class="character-edit--saving-throw--proficiency" [(ngModel)]="character.constitutionSavingThrowProficiency" (ngModelChange)="savingThrowChange(2)">Constitution</mat-checkbox>
+    <p class="character-edit--saving-throw--value">{{constitutionSavingThrow}}</p>
+  </div>
+  <div class="character-edit--saving-throw">
+    <mat-checkbox class="character-edit--saving-throw--proficiency" [(ngModel)]="character.intelligenceSavingThrowProficiency" (ngModelChange)="savingThrowChange(3)">Intelligence</mat-checkbox>
+    <p class="character-edit--saving-throw--value">{{intelligenceSavingThrow}}</p>
+  </div>
+  <div class="character-edit--saving-throw">
+    <mat-checkbox class="character-edit--saving-throw--proficiency" [(ngModel)]="character.wisdomSavingThrowProficiency" (ngModelChange)="savingThrowChange(4)">Wisdom</mat-checkbox>
+    <p class="character-edit--saving-throw--value">{{wisdomSavingThrow}}</p>
+  </div>
+  <div class="character-edit--saving-throw">
+    <mat-checkbox class="character-edit--saving-throw--proficiency" [(ngModel)]="character.charismaSavingThrowProficiency" (ngModelChange)="savingThrowChange(5)">Charisma</mat-checkbox>
+    <p class="character-edit--saving-throw--value">{{charismaSavingThrow}}</p>
+  </div>
+</div>
+<mat-divider [inset]="true"></mat-divider>
+<div class='character-edit--ability-scores'>
+  <h3 class='character-edit--header'>Skills</h3>
+  <div class="character-edit--ability-score">
+    <mat-form-field class="character-edit--ability-score--proficiency">
+      <mat-label>Acrobatics</mat-label>
+      <mat-select [(ngModel)]='character.acrobaticsAbilityProficiency' (ngModelChange)='abilityBonusUpdate(AbilityCheck.ACROBATICS)'>
+        <mat-option *ngFor="let abilityBonusObject of AbilityBonusObjects" [value]="abilityBonusObject.value">
+          {{abilityBonusObject.key}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <p class="character-edit--ability-score--value">{{acrobaticsAbilityBonus}}</p>
+  </div>
+  <div class="character-edit--ability-score">
+    <mat-form-field class="character-edit--ability-score--proficiency">
+      <mat-label>Animal Handling</mat-label>
+      <mat-select [(ngModel)]='character.animalHandlingAbilityProficiency' (ngModelChange)='abilityBonusUpdate(AbilityCheck.ANIMAL_HANDLING)'>
+        <mat-option *ngFor="let abilityBonusObject of AbilityBonusObjects" [value]="abilityBonusObject.value">
+          {{abilityBonusObject.key}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <p class="character-edit--ability-score--value">{{animalHandlingAbilityBonus}}</p>
+  </div>
+  <div class="character-edit--ability-score">
+    <mat-form-field class="character-edit--ability-score--proficiency">
+      <mat-label>Arcana</mat-label>
+      <mat-select [(ngModel)]='character.arcanaAbilityProficiency' (ngModelChange)='abilityBonusUpdate(AbilityCheck.ARCANA)'>
+        <mat-option *ngFor="let abilityBonusObject of AbilityBonusObjects" [value]="abilityBonusObject.value">
+          {{abilityBonusObject.key}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <p class="character-edit--ability-score--value">{{arcanaAbilityBonus}}</p>
+  </div>
+  <div class="character-edit--ability-score">
+    <mat-form-field class="character-edit--ability-score--proficiency">
+      <mat-label>Athletics</mat-label>
+      <mat-select [(ngModel)]='character.athleticsAbilityProficiency' (ngModelChange)='abilityBonusUpdate(AbilityCheck.ATHLETICS)'>
+        <mat-option *ngFor="let abilityBonusObject of AbilityBonusObjects" [value]="abilityBonusObject.value">
+          {{abilityBonusObject.key}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <p class="character-edit--ability-score--value">{{athleticsAbilityBonus}}</p>
+  </div>
+  <div class="character-edit--ability-score">
+    <mat-form-field class="character-edit--ability-score--proficiency">
+      <mat-label>Deception</mat-label>
+      <mat-select [(ngModel)]='character.deceptionAbilityProficiency' (ngModelChange)='abilityBonusUpdate(AbilityCheck.DECEPTION)'>
+        <mat-option *ngFor="let abilityBonusObject of AbilityBonusObjects" [value]="abilityBonusObject.value">
+          {{abilityBonusObject.key}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <p class="character-edit--ability-score--value">{{deceptionAbilityBonus}}</p>
+  </div>
+  <div class="character-edit--ability-score">
+    <mat-form-field class="character-edit--ability-score--proficiency">
+      <mat-label>History</mat-label>
+      <mat-select [(ngModel)]='character.historyAbilityProficiency' (ngModelChange)='abilityBonusUpdate(AbilityCheck.HISTORY)'>
+        <mat-option *ngFor="let abilityBonusObject of AbilityBonusObjects" [value]="abilityBonusObject.value">
+          {{abilityBonusObject.key}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <p class="character-edit--ability-score--value">{{historyAbilityBonus}}</p>
+  </div>
+  <div class="character-edit--ability-score">
+    <mat-form-field class="character-edit--ability-score--proficiency">
+      <mat-label>Insight</mat-label>
+      <mat-select [(ngModel)]='character.insightAbilityProficiency' (ngModelChange)='abilityBonusUpdate(AbilityCheck.INSIGHT)'>
+        <mat-option *ngFor="let abilityBonusObject of AbilityBonusObjects" [value]="abilityBonusObject.value">
+          {{abilityBonusObject.key}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <p class="character-edit--ability-score--value">{{insightAbilityBonus}}</p>
+  </div>
+  <div class="character-edit--ability-score">
+    <mat-form-field class="character-edit--ability-score--proficiency">
+      <mat-label>Intimidation</mat-label>
+      <mat-select [(ngModel)]='character.intimidationAbilityProficiency' (ngModelChange)='abilityBonusUpdate(AbilityCheck.INTIMIDATION)'>
+        <mat-option *ngFor="let abilityBonusObject of AbilityBonusObjects" [value]="abilityBonusObject.value">
+          {{abilityBonusObject.key}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <p class="character-edit--ability-score--value">{{intimidationAbilityBonus}}</p>
+  </div>
+  <div class="character-edit--ability-score">
+    <mat-form-field class="character-edit--ability-score--proficiency">
+      <mat-label>Investigation</mat-label>
+      <mat-select [(ngModel)]='character.investigationAbilityProficiency' (ngModelChange)='abilityBonusUpdate(AbilityCheck.INVESTIGATION)'>
+        <mat-option *ngFor="let abilityBonusObject of AbilityBonusObjects" [value]="abilityBonusObject.value">
+          {{abilityBonusObject.key}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <p class="character-edit--ability-score--value">{{investigationAbilityBonus}}</p>
+  </div>
+  <div class="character-edit--ability-score">
+    <mat-form-field class="character-edit--ability-score--proficiency">
+      <mat-label>Medicine</mat-label>
+      <mat-select [(ngModel)]='character.medicineAbilityProficiency' (ngModelChange)='abilityBonusUpdate(AbilityCheck.MEDICINE)'>
+        <mat-option *ngFor="let abilityBonusObject of AbilityBonusObjects" [value]="abilityBonusObject.value">
+          {{abilityBonusObject.key}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <p class="character-edit--ability-score--value">{{medicineAbilityBonus}}</p>
+  </div>
+  <div class="character-edit--ability-score">
+    <mat-form-field class="character-edit--ability-score--proficiency">
+      <mat-label>Nature</mat-label>
+      <mat-select [(ngModel)]='character.natureAbilityProficiency' (ngModelChange)='abilityBonusUpdate(AbilityCheck.NATURE)'>
+        <mat-option *ngFor="let abilityBonusObject of AbilityBonusObjects" [value]="abilityBonusObject.value">
+          {{abilityBonusObject.key}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <p class="character-edit--ability-score--value">{{natureAbilityBonus}}</p>
+  </div>
+  <div class="character-edit--ability-score">
+    <mat-form-field class="character-edit--ability-score--proficiency">
+      <mat-label>Perception</mat-label>
+      <mat-select [(ngModel)]='character.perceptionAbilityProficiency' (ngModelChange)='abilityBonusUpdate(AbilityCheck.PERCEPTION)'>
+        <mat-option *ngFor="let abilityBonusObject of AbilityBonusObjects" [value]="abilityBonusObject.value">
+          {{abilityBonusObject.key}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <p class="character-edit--ability-score--value">{{perceptionAbilityBonus}}</p>
+  </div>
+  <div class="character-edit--ability-score">
+    <mat-form-field class="character-edit--ability-score--proficiency">
+      <mat-label>Performance</mat-label>
+      <mat-select [(ngModel)]='character.performanceAbilityProficiency' (ngModelChange)='abilityBonusUpdate(AbilityCheck.PERFORMANCE)'>
+        <mat-option *ngFor="let abilityBonusObject of AbilityBonusObjects" [value]="abilityBonusObject.value">
+          {{abilityBonusObject.key}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <p class="character-edit--ability-score--value">{{performanceAbilityBonus}}</p>
+  </div>
+  <div class="character-edit--ability-score">
+    <mat-form-field class="character-edit--ability-score--proficiency">
+      <mat-label>Persuasion</mat-label>
+      <mat-select [(ngModel)]='character.persuasionAbilityProficiency' (ngModelChange)='abilityBonusUpdate(AbilityCheck.PERSUASION)'>
+        <mat-option *ngFor="let abilityBonusObject of AbilityBonusObjects" [value]="abilityBonusObject.value">
+          {{abilityBonusObject.key}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <p class="character-edit--ability-score--value">{{persuasionAbilityBonus}}</p>
+  </div>
+  <div class="character-edit--ability-score">
+    <mat-form-field class="character-edit--ability-score--proficiency">
+      <mat-label>Religion</mat-label>
+      <mat-select [(ngModel)]='character.religionAbilityProficiency' (ngModelChange)='abilityBonusUpdate(AbilityCheck.RELIGION)'>
+        <mat-option *ngFor="let abilityBonusObject of AbilityBonusObjects" [value]="abilityBonusObject.value">
+          {{abilityBonusObject.key}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <p class="character-edit--ability-score--value">{{religionAbilityBonus}}</p>
+  </div>
+  <div class="character-edit--ability-score">
+    <mat-form-field class="character-edit--ability-score--proficiency">
+      <mat-label>Sleight of Hand</mat-label>
+      <mat-select [(ngModel)]='character.sleightOfHandAbilityProficiency' (ngModelChange)='abilityBonusUpdate(AbilityCheck.SLEIGHT_OF_HAND)'>
+        <mat-option *ngFor="let abilityBonusObject of AbilityBonusObjects" [value]="abilityBonusObject.value">
+          {{abilityBonusObject.key}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <p class="character-edit--ability-score--value">{{sleightOfHandAbilityBonus}}</p>
+  </div>
+  <div class="character-edit--ability-score">
+    <mat-form-field class="character-edit--ability-score--proficiency">
+      <mat-label>Stealth</mat-label>
+      <mat-select [(ngModel)]='character.stealthAbilityProficiency' (ngModelChange)='abilityBonusUpdate(AbilityCheck.STEALTH)'>
+        <mat-option *ngFor="let abilityBonusObject of AbilityBonusObjects" [value]="abilityBonusObject.value">
+          {{abilityBonusObject.key}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <p class="character-edit--ability-score--value">{{stealthAbilityBonus}}</p>
+  </div>
+  <div class="character-edit--ability-score">
+    <mat-form-field class="character-edit--ability-score--proficiency">
+      <mat-label>Survival</mat-label>
+      <mat-select [(ngModel)]='character.survivalAbilityProficiency' (ngModelChange)='abilityBonusUpdate(AbilityCheck.SURVIVAL)'>
+        <mat-option *ngFor="let abilityBonusObject of AbilityBonusObjects" [value]="abilityBonusObject.value">
+          {{abilityBonusObject.key}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <p class="character-edit--ability-score--value">{{survivalAbilityBonus}}</p>
+  </div>
+  <p class="character-edit--ability-scores--second-value">Passive Perception: {{passivePerception}}</p>
+</div>

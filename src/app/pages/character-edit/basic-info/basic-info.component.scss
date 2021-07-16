@@ -1,0 +1,18 @@
+@import '../../../../globals.scss';
+
+.basic-info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  &--header {
+    font-size: $section-header;
+    width: 100%;
+  }
+
+  &--field {
+    font-size: 1.25rem;
+    width: $base-field-width;
+    margin-right: $element-spacing;
+  }
+}

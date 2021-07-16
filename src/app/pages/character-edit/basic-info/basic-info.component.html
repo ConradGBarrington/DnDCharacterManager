@@ -1,0 +1,24 @@
+<div class='basic-info'>
+  <h3 class='basic-info--header'>Basic Info</h3>
+  <mat-form-field class='basic-info--field'>
+    <input matNativeControl type='text' placeholder='Character Name' [(ngModel)]="character.name">
+  </mat-form-field>
+  <mat-form-field class='basic-info--field'>
+    <input matNativeControl type='text' placeholder='Class' [(ngModel)]="character.characterClass">
+  </mat-form-field>
+  <mat-form-field class='basic-info--field'>
+    <input matNativeControl type='number' min=1 max=20 placeholder='Level' [(ngModel)]="character.level" (ngModelChange)="character.propertyEventEmitter.emit(CharacterProperty.level)">
+  </mat-form-field>
+  <mat-form-field class='basic-info--field'>
+    <input matNativeControl type='text' placeholder='Background' [(ngModel)]="character.background">
+  </mat-form-field>
+  <mat-form-field class='basic-info--field'>
+    <input matNativeControl type='text' placeholder='Race' [(ngModel)]="character.race">
+  </mat-form-field>
+  <mat-form-field class='basic-info--field'>
+    <input matNativeControl type='text' placeholder='Alignment' [(ngModel)]="character.alignment">
+  </mat-form-field>
+  <mat-form-field class='basic-info--field'>
+    <input matNativeControl type='number' placeholder='Experience Points' [(ngModel)]="character.characterClass">
+  </mat-form-field>
+</div>

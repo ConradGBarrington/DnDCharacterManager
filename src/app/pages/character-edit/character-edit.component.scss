@@ -1,0 +1,25 @@
+@import '../../../globals.scss';
+
+.character-edit {
+  &--title {
+    font-size: $page-header;
+  }
+
+  &--modifier {
+    display: inline-block;
+  }
+
+  &--saving-throws {
+
+    &--value {
+      display: inline-block;
+    }
+
+  }
+
+  &--ability-scores {
+    &--value {
+      display: inline-block;
+    }
+  }
+}

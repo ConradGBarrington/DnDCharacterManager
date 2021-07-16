@@ -1,0 +1,83 @@
+@import '../../../../globals.scss';
+
+.character-edit {
+  &--ability-scores {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+
+  &--header {
+    font-size: $section-header;
+    width: 100%;
+  }
+
+  &--field {
+    font-size: $font-size-field;
+  }
+
+  &--modifier {
+    font-size: $font-size-field;
+    margin-bottom: 0px;
+  }
+
+  &--ability {
+    display: inline-block;
+    margin: $element-small-spacing;
+    border: $box-border;
+    border-radius: $box-radius;
+    padding: $element-small-spacing;
+  }
+
+  &--saving-throws {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+
+  &--saving-throw {
+
+    margin: $element-small-spacing;
+
+    border: $box-border;
+    border-radius: $box-radius;
+    padding: $element-small-spacing;
+
+    &--proficiency {
+      font-size: $font-size-field;
+      display: inline-block;
+    } 
+
+    &--value {
+      font-size: $font-size-field;
+      display: inline-block;
+      margin-left: $element-small-spacing;
+      margin-bottom: 0px;
+    }
+  }
+
+  &--ability-score {
+    margin: $element-small-spacing;
+    border: $box-border;
+    border-radius: $box-radius;
+    padding: $element-small-spacing;
+
+    &--proficiency {
+      font-size: $font-size-field;
+    }
+
+    &--value {
+      font-size: $font-size-emphasis;
+      text-align: center;
+      margin-bottom: 0px;
+    }
+  }
+
+  &--ability-scores {
+    &--second-value {
+      font-size: $font-size-emphasis;
+      text-align: center;
+      width: 100%;
+    }
+  }
+}

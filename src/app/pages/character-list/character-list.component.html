@@ -1,0 +1,13 @@
+<mat-card class='character-list'>
+  <div class='character-list--topbar'>
+    <h2 class=character-list--title>My Characters</h2>
+    <mat-form-field class='character-list--field'>
+      <input matNativeControl type='text' placeholder='search'>
+    </mat-form-field>
+    <button class='character-list--add' mat-raised-button color=primary>Create +</button>
+  </div>
+  <mat-divider [inset]="true"></mat-divider>
+  <mat-action-list>
+    <button class='character-list--item' mat-list-item *ngFor="let character of characters">{{character.name}} {{character.race}} {{character.characterClass}} {{character.level}}</button>
+  </mat-action-list>
+</mat-card>

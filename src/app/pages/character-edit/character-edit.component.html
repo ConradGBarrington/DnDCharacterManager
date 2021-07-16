@@ -1,0 +1,141 @@
+<mat-card class='character-edit'>
+  <h2 class=character-edit--title>{{character?.name || 'New Character'}}</h2>
+  <app-basic-info [character]='character'></app-basic-info>
+  <mat-divider [inset]="true"></mat-divider>
+  <app-abilities [character]='character'></app-abilities>
+  <mat-divider [inset]="true"></mat-divider>
+  <app-combat-stats [character]='character'></app-combat-stats>
+  <mat-divider [inset]="true"></mat-divider>
+  <div class='character-edit--equipment'>
+    <p class="character-edit--equipment--second-value">Armor Class: </p>
+    <mat-checkbox class="character-edit--equipment--armor">Wearing Armor?</mat-checkbox>
+    <div>
+      <p class="character-edit--combat-stats--second-value">Armor:</p>
+      <p>Shields:</p>
+      <p>Weapons:</p>
+      <p>Items:</p>
+    </div>
+  </div>
+  <mat-divider [inset]="true"></mat-divider>
+  <div class='character-edit--inventory'>
+    <p>Inventory</p>
+    <p>dynamic currency here</p>
+    <p>item list here (only show names, click for description modal with remove/edit options)</p>
+  </div>
+  <mat-divider [inset]="true"></mat-divider>
+  <div class='character-edit--proficiencies'>
+    <p>List of proficiencies, all just strings</p>
+  </div>
+  <mat-divider [inset]="true"></mat-divider>
+  <div class='character-edit--languages'>
+    <p>List of langauges spoken, all just strings</p>
+  </div>
+  <mat-divider [inset]="true"></mat-divider>
+  <div class='character-edit--features'>
+    <p>List of all features, uses feature interface</p>
+  </div>
+  <mat-divider [inset]="true"></mat-divider>
+  <div class='character-edit--features'>
+    <mat-form-field>
+      <textarea class='character-edit--field' matNativeControl placeholder='Personality Traits'></textarea>
+    </mat-form-field>
+    <mat-form-field>
+      <textarea class='character-edit--field' matNativeControl placeholder='Ideals'></textarea>
+    </mat-form-field>
+    <mat-form-field>
+      <textarea class='character-edit--field' matNativeControl placeholder='Bonds'></textarea>
+    </mat-form-field>
+    <mat-form-field>
+      <textarea class='character-edit--field' matNativeControl placeholder='Flaws'></textarea>
+    </mat-form-field>
+  </div>
+  <mat-divider [inset]="true"></mat-divider>
+  <div class='character-edit--appearance'>
+    <mat-form-field>
+      <input class='character-edit--field' matNativeControl type='number' placeholder='Age'>
+    </mat-form-field>
+    <mat-form-field>
+      <input class='character-edit--field' matNativeControl type='text' placeholder='Height'>
+    </mat-form-field>
+    <mat-form-field>
+      <input class='character-edit--field' matNativeControl type='text' placeholder='Weight'>
+    </mat-form-field>
+    <mat-form-field>
+      <input class='character-edit--field' matNativeControl type='text' placeholder='Eyes'>
+    </mat-form-field>
+    <mat-form-field>
+      <input class='character-edit--field' matNativeControl type='text' placeholder='Skin'>
+    </mat-form-field>
+    <mat-form-field>
+      <input class='character-edit--field' matNativeControl type='text' placeholder='Hair'>
+    </mat-form-field>
+    <mat-form-field>
+      <textarea class='character-edit--field' matNativeControl placeholder='Appearance Description'></textarea>
+    </mat-form-field>
+  </div>
+  <mat-divider [inset]="true"></mat-divider>
+  <div class='character-edit--backstory'>
+    <mat-form-field>
+      <textarea class='character-edit--field' matNativeControl placeholder='Backstory'></textarea>
+    </mat-form-field>
+  </div>
+  <mat-divider [inset]="true"></mat-divider>
+  <div class='character-edit--relationships'>
+    <p>Relationship name list, click to open modal with full details and edit and delete button</p>
+  </div>
+  <mat-divider [inset]="true"></mat-divider>
+  <div class='character-edit--spells'>
+    <p>default Spellcasting ability select box here</p>
+    <p>Spell Save DC</p>
+    <p>Spell Attack Bonus</p>
+    <div class ='character-edit--cantrips'>
+      <p>cantrips list, click to open modal with full details and cast, edit, delete button</p>
+    </div>
+    <div class ='character-edit--cantrips'>
+      <p>Available Slots/Total Slots as well as buttons for adding and deleting slots</p>
+      <p>Add Spell Button</p>
+      <p>level 1 spells list, click to open modal with full details and cast, edit, delete button</p>
+    </div>
+    <div class ='character-edit--cantrips'>
+      <p>Available Slots/Total Slots as well as buttons for adding and deleting slots</p>
+      <p>Add Spell Button</p>
+      <p>level 2 spells list, click to open modal with full details and cast, edit, delete button</p>
+    </div>
+    <div class ='character-edit--cantrips'>
+      <p>Available Slots/Total Slots as well as buttons for adding and deleting slots</p>
+      <p>Add Spell Button</p>
+      <p>level 3 spells list, click to open modal with full details and cast, edit, delete button</p>
+    </div>
+    <div class ='character-edit--cantrips'>
+      <p>Available Slots/Total Slots as well as buttons for adding and deleting slots</p>
+      <p>Add Spell Button</p>
+      <p>level 4 spells list, click to open modal with full details and cast, edit, delete button</p>
+    </div>
+    <div class ='character-edit--cantrips'>
+      <p>Available Slots/Total Slots as well as buttons for adding and deleting slots</p>
+      <p>Add Spell Button</p>
+      <p>level 5 spells list, click to open modal with full details and cast, edit, delete button</p>
+    </div>
+    <div class ='character-edit--cantrips'>
+      <p>Available Slots/Total Slots as well as buttons for adding and deleting slots</p>
+      <p>Add Spell Button</p>
+      <p>level 6 spells list, click to open modal with full details and cast, edit, delete button</p>
+    </div>
+    <div class ='character-edit--cantrips'>
+      <p>Available Slots/Total Slots as well as buttons for adding and deleting slots</p>
+      <p>Add Spell Button</p>
+      <p>level 7 spells list, click to open modal with full details and cast, edit, delete button</p>
+    </div>
+    <div class ='character-edit--cantrips'>
+      <p>Available Slots/Total Slots as well as buttons for adding and deleting slots</p>
+      <p>Add Spell Button</p>
+      <p>level 8 spells list, click to open modal with full details and cast, edit, delete button</p>
+    </div>
+    <div class ='character-edit--cantrips'>
+      <p>Available Slots/Total Slots as well as buttons for adding and deleting slots</p>
+      <p>Add Spell Button</p>
+      <p>level 9 spells list, click to open modal with full details and cast, edit, delete button</p>
+    </div>
+  </div>
+
+</mat-card>
