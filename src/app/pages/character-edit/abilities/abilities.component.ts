@@ -5,6 +5,7 @@ import { CharacterProperty } from 'src/app/enums/character-properties';
 import { AbilityBonus } from 'src/app/enums/ability-bonus';
 import { Ability, AbilityCheck, AbilityChecks } from 'src/app/enums/ability';
 import { abilityAbilityCheckMap } from 'src/app/constants/ability-check-map';
+import { rollDice } from 'src/app/utils/rollDice';
 
 @Component({
   selector: 'app-abilities',
@@ -22,6 +23,15 @@ export class AbilitiesComponent implements OnInit {
   AbilityCheck = AbilityCheck;
 
   @Input() character!: Character;
+  @Input() newCharacter: boolean = false;
+
+  //rolledAbilities
+  ability1: number = 0;
+  ability2: number = 0;
+  ability3: number = 0;
+  ability4: number = 0;
+  ability5: number = 0;
+  ability6: number = 0;
 
   //ability modifier
   public strengthModifier: number = 0;
@@ -274,6 +284,27 @@ export class AbilitiesComponent implements OnInit {
         break;
       }
     }
+  }
+
+  public rollAbilities(): void {
+    this.ability1 = this._rollAbility();
+    this.ability2 = this._rollAbility();
+    this.ability3 = this._rollAbility();
+    this.ability4 = this._rollAbility();
+    this.ability5 = this._rollAbility();
+    this.ability6 = this._rollAbility();
+  }
+
+  private _rollAbility(): number {
+    const roll1 = rollDice(6);
+    const roll2 = rollDice(6);
+    const roll3 = rollDice(6);
+    const roll4 = rollDice(6);
+
+    const rolls = [roll1, roll2, roll3, roll4].sort();
+
+    rolls.shift();
+    return rolls.reduce((sum, value) => sum = (sum || 0) + value);
   }
 
 }

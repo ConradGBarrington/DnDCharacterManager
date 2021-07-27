@@ -1,6 +1,8 @@
 @import '../../../../globals.scss';
 
 .basic-info {
+  margin-top: $element-spacing;
+  margin-bottom: $element-spacing;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;

@@ -48,3 +48,45 @@ export const AbilityChecks = [
   AbilityCheck.STEALTH,
   AbilityCheck.SURVIVAL,
 ];
+
+export let abilitySelectMap: { key: string, value: string | Ability }[] = [];
+
+for (const abilitySet of Object.entries(Ability)) {
+  if (isNaN(Number(abilitySet[0]))) {
+
+    let key: string = '';
+
+    switch(abilitySet[0]) {
+      case 'STRENGTH': {
+        key = 'Strength';
+        break;
+      }
+      case 'DEXTERITY': {
+        key = 'Dexterity';
+        break;
+      }
+      case 'CONSTITUTION': {
+        key = 'Constitution';
+        break;
+      }
+      case 'INTELLIGENCE': {
+        key = 'Intelligence';
+        break;
+      }
+      case 'WISDOM': {
+        key = 'Wisdom';
+        break;
+      }
+      case 'CHARISMA': {
+        key = 'Charisma';
+        break;
+      }
+    }
+
+
+    abilitySelectMap.push({
+      key,
+      value: abilitySet[1],
+    });
+  }
+}

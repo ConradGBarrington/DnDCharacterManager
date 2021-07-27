@@ -8,6 +8,8 @@
   }
 
   &--combat-stats {
+    margin-top: $element-spacing;
+    margin-bottom: $element-spacing;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -21,6 +23,9 @@
   &--text {
     font-size: $font-size-field;
     margin: $element-small-spacing;
+    border: $box-border;
+    border-radius: $box-radius;
+    padding: $element-small-spacing;
     display: inline-block;
     align-self: center;
   }

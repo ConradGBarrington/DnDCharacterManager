@@ -2,26 +2,11 @@
   <h2 class=character-edit--title>{{character?.name || 'New Character'}}</h2>
   <app-basic-info [character]='character'></app-basic-info>
   <mat-divider [inset]="true"></mat-divider>
-  <app-abilities [character]='character'></app-abilities>
+  <app-abilities [newCharacter]='newCharacter' [character]='character'></app-abilities>
   <mat-divider [inset]="true"></mat-divider>
   <app-combat-stats [character]='character'></app-combat-stats>
   <mat-divider [inset]="true"></mat-divider>
-  <div class='character-edit--equipment'>
-    <p class="character-edit--equipment--second-value">Armor Class: </p>
-    <mat-checkbox class="character-edit--equipment--armor">Wearing Armor?</mat-checkbox>
-    <div>
-      <p class="character-edit--combat-stats--second-value">Armor:</p>
-      <p>Shields:</p>
-      <p>Weapons:</p>
-      <p>Items:</p>
-    </div>
-  </div>
-  <mat-divider [inset]="true"></mat-divider>
-  <div class='character-edit--inventory'>
-    <p>Inventory</p>
-    <p>dynamic currency here</p>
-    <p>item list here (only show names, click for description modal with remove/edit options)</p>
-  </div>
+  <app-inventory [character]='character'></app-inventory>
   <mat-divider [inset]="true"></mat-divider>
   <div class='character-edit--proficiencies'>
     <p>List of proficiencies, all just strings</p>

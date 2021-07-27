@@ -12,6 +12,9 @@ import {MatListModule} from '@angular/material/list';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatSelectModule} from '@angular/material/select';
+import {MatTableModule} from '@angular/material/table';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -25,6 +28,12 @@ import { EditDeleteModalComponent } from './common/edit-delete-modal/edit-delete
 import { BasicInfoComponent } from './pages/character-edit/basic-info/basic-info.component';
 import { AbilitiesComponent } from './pages/character-edit/abilities/abilities.component';
 import { CombatStatsComponent } from './pages/character-edit/combat-stats/combat-stats.component';
+import { InventoryComponent } from './pages/character-edit/inventory/inventory.component';
+import { ItemEditComponent } from './pages/character-edit/inventory/item-edit/item-edit.component';
+import { ArmorEditComponent } from './pages/character-edit/inventory/armor-edit/armor-edit.component';
+import { ShieldEditComponent } from './pages/character-edit/inventory/shield-edit/shield-edit.component';
+import { WeaponEditComponent } from './pages/character-edit/inventory/weapon-edit/weapon-edit.component';
+import { DamageInputComponent } from './common/damage-input/damage-input.component';
 
 
 
@@ -39,7 +48,13 @@ import { CombatStatsComponent } from './pages/character-edit/combat-stats/combat
     EditDeleteModalComponent,
     BasicInfoComponent,
     AbilitiesComponent,
-    CombatStatsComponent
+    CombatStatsComponent,
+    InventoryComponent,
+    ItemEditComponent,
+    ArmorEditComponent,
+    ShieldEditComponent,
+    WeaponEditComponent,
+    DamageInputComponent
   ],
   imports: [
     BrowserModule,
@@ -53,7 +68,10 @@ import { CombatStatsComponent } from './pages/character-edit/combat-stats/combat
     MatListModule,
     MatDividerModule,
     MatCheckboxModule,
-    MatSelectModule
+    MatSelectModule,
+    MatTableModule,
+    MatDialogModule,
+    MatExpansionModule
   ],
   providers: [],
   bootstrap: [AppComponent]

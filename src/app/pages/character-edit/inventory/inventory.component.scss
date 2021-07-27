@@ -1,0 +1,107 @@
+@import '../../../../globals.scss';
+
+.character-edit {
+  &--header {
+    display: inline-block;
+    font-size: $section-header;
+    margin-bottom: 0;
+  }
+
+  &--inventory {
+    margin-top: $element-spacing;
+    margin-bottom: $element-spacing;
+
+    &--header {
+      font-size: $font-size-field;
+      margin-top: $element-small-spacing;
+    }
+    
+    &--topbar {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &--add {
+      margin-right: $element-small-spacing;
+      font-size: $font-size-field;
+    }
+
+    &--list {
+      width: 100%;
+
+      &--item {
+        &:hover {
+          cursor: pointer;
+        }
+
+        &--header {
+          font-size: $font-size-field;
+          font-weight: bold;
+        }
+
+        &--value {
+          font-size: $font-size-field;
+        }
+      }
+    }
+
+    &--equip {
+      font-size: $font-size-field;
+    }
+
+    &--equipped {
+      margin: 0;
+    }
+
+    &--text {
+      display: inline-block;
+      margin: $element-small-spacing;
+
+      font-size: $font-size-field;
+      border: $box-border;
+      border-radius: $box-radius;
+      padding: $element-small-spacing;
+    }
+
+    &--text-message {
+      display: inline-block;
+      margin: $element-small-spacing;
+
+      font-size: $font-size-field;
+    }
+
+    &--text-container {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+  }
+}
+
+.rarity-0 {
+  background-color: $rarity-non-magical;
+}
+
+.rarity-1 {
+  background-color: $rarity-common;
+}
+
+.rarity-2 {
+  background-color: $rarity-uncommon;
+}
+
+.rarity-3 {
+  background-color: $rarity-rare;
+}
+
+.rarity-4 {
+  background-color: $rarity-very-rare;
+}
+
+.rarity-5 {
+  background-color: $rarity-legendary;
+}
+
+.rarity-6 {
+  background-color: $rarity-artifact;
+}

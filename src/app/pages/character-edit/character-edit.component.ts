@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Character } from 'src/app/models/character';
 
 @Component({
@@ -8,9 +8,12 @@ import { Character } from 'src/app/models/character';
 })
 export class CharacterEditComponent implements OnInit {
 
+  @Input()
   public character: Character;
+  newCharacter: boolean = false;
 
   constructor() {
+    this.newCharacter = true;
     this.character = new Character();
   }
 

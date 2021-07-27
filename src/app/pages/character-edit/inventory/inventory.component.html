@@ -1,0 +1,179 @@
+<div class='character-edit--inventory'>
+  <div class='character-edit--inventory--topbar'>
+    <h3 class='character-edit--header'>Inventory</h3>
+    <div class='character-edit--header-buttons'>
+      <button class='character-edit--inventory--add' mat-raised-button color=primary (click)='addWeapon()'>Add Weapon</button>
+      <button class='character-edit--inventory--add' mat-raised-button color=primary (click)='addShield()'>Add Shield</button>
+      <button class='character-edit--inventory--add' mat-raised-button color=primary (click)='addArmor()'>Add Armor</button>
+      <button class='character-edit--inventory--add' mat-raised-button color=primary (click)='addItem()'>Add Item</button>
+    </div>
+  </div>
+  <div class='character-edit--inventory--text-container'>
+    <p class='character-edit--inventory--text'>Armor Class: {{character.armorClass}}</p>
+  </div>
+  <div *ngIf='character.weapons.length > 0'>
+    <h4 class='character-edit--inventory--header'>Weapons</h4>
+    <table #weapons class='character-edit--inventory--list' mat-table [dataSource]="character.weapons">
+      <!-- Name Column -->
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef class='character-edit--inventory--list--item--header'>Name</th>
+        <td mat-cell *matCellDef="let weapon" class='character-edit--inventory--list--item--value'>{{weapon.name}}</td>
+      </ng-container>
+  
+      <!-- Damage Column -->
+      <ng-container matColumnDef="damage">
+        <th mat-header-cell *matHeaderCellDef class='character-edit--inventory--list--item--header'>Name</th>
+        <td mat-cell *matCellDef="let weapon" class='character-edit--inventory--list--item--value'>{{damagesToString(weapon.damage)}}</td>
+      </ng-container>
+  
+      <!-- Handedness Column -->
+      <ng-container matColumnDef="handedness">
+        <th mat-header-cell *matHeaderCellDef class='character-edit--inventory--list--item--header'>Handedness</th>
+        <td mat-cell *matCellDef="let weapon" class='character-edit--inventory--list--item--value'>{{weapon.handedness}}</td>
+      </ng-container>
+  
+      <!-- Rarity Column -->
+      <ng-container matColumnDef="rarity">
+        <th mat-header-cell *matHeaderCellDef class='character-edit--inventory--list--item--header'>Rarity</th>
+        <td mat-cell *matCellDef="let weapon" class='character-edit--inventory--list--item--value'>{{rarityToString(weapon.rarity)}}</td>
+      </ng-container>
+  
+      <!-- Equip -->
+      <ng-container matColumnDef="equip">
+        <th mat-header-cell *matHeaderCellDef class='character-edit--inventory--list--item--header'>Equip</th>
+        <td mat-cell *matCellDef="let weapon" class='character-edit--inventory--list--item--value'>
+          <button *ngIf='!weapon.equipped' class='character-edit--inventory--equip' mat-raised-button color=primary (click)='equipWeapon($event, weapon)'>Equip</button>
+          <button *ngIf='weapon.equipped' class='character-edit--inventory--equip' mat-raised-button color=error (click)='unequipWeapon($event, weapon)'>Unequip</button>
+        </td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumnsWeapon"></tr>
+      <tr
+          mat-row
+          (click)='weaponClick(row)'
+          class='character-edit--inventory--list--item rarity-{{row.rarity}}'
+          *matRowDef="let row; columns: displayedColumnsWeapon;"
+      ></tr>
+    </table>
+  </div>
+  <div *ngIf='character.shields.length > 0'>
+    <h4 class='character-edit--inventory--header'>Shields</h4>
+    <table #shields class='character-edit--inventory--list' mat-table [dataSource]="character.shields">
+      <!-- Name Column -->
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef class='character-edit--inventory--list--item--header'>Name</th>
+        <td mat-cell *matCellDef="let shield" class='character-edit--inventory--list--item--value'>{{shield.name}}</td>
+      </ng-container>
+
+      <!-- Armor Class -->
+      <ng-container matColumnDef="armor">
+        <th mat-header-cell *matHeaderCellDef class='character-edit--inventory--list--item--header'>Armor Bonus</th>
+        <td mat-cell *matCellDef="let shield" class='character-edit--inventory--list--item--value'>{{shield.armorBonus}}</td>
+      </ng-container>
+  
+      <!-- Weight Column -->
+      <ng-container matColumnDef="weight">
+        <th mat-header-cell *matHeaderCellDef class='character-edit--inventory--list--item--header'>Weight</th>
+        <td mat-cell *matCellDef="let shield" class='character-edit--inventory--list--item--value'>{{shield.weight}}</td>
+      </ng-container>
+  
+      <!-- Rarity Column -->
+      <ng-container matColumnDef="rarity">
+        <th mat-header-cell *matHeaderCellDef class='character-edit--inventory--list--item--header'>Rarity</th>
+        <td mat-cell *matCellDef="let shield" class='character-edit--inventory--list--item--value'>{{rarityToString(shield.rarity)}}</td>
+      </ng-container>
+  
+      <!-- Equip -->
+      <ng-container matColumnDef="equip">
+        <th mat-header-cell *matHeaderCellDef class='character-edit--inventory--list--item--header'>Equip</th>
+        <td mat-cell *matCellDef="let armor" class='character-edit--inventory--list--item--value'>
+          <button *ngIf='!armor.equipped' class='character-edit--inventory--equip' mat-raised-button color=primary (click)='equipArmor($event, armor)'>Equip</button>
+          <button *ngIf='armor.equipped' class='character-edit--inventory--equip' mat-raised-button color=error (click)='unequipArmor($event, armor)'>Unequip</button>
+        </td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumnsShield"></tr>
+      <tr
+          mat-row
+          (click)='shieldClick(row)'
+          class='character-edit--inventory--list--item rarity-{{row.rarity}}'
+          *matRowDef="let row; columns: displayedColumnsShield;"
+      ></tr>
+    </table>
+  </div>
+  <div *ngIf='character.armors.length > 0'>
+    <h4 class='character-edit--inventory--header'>Armor</h4>
+    <table #armors class='character-edit--inventory--list' mat-table [dataSource]="character.armors">
+      <!-- Name Column -->
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef class='character-edit--inventory--list--item--header'>Name</th>
+        <td mat-cell *matCellDef="let armor" class='character-edit--inventory--list--item--value'>{{armor.name}}</td>
+      </ng-container>
+  
+      <!-- Armor Class -->
+      <ng-container matColumnDef="armor">
+        <th mat-header-cell *matHeaderCellDef class='character-edit--inventory--list--item--header'>Armor Class</th>
+        <td mat-cell *matCellDef="let armor" class='character-edit--inventory--list--item--value'>{{armor.calculateArmorClass(character.dexterityModifier)}}</td>
+      </ng-container>
+
+      <!-- Weight Column -->
+      <ng-container matColumnDef="weight">
+        <th mat-header-cell *matHeaderCellDef class='character-edit--inventory--list--item--header'>Weight</th>
+        <td mat-cell *matCellDef="let armor" class='character-edit--inventory--list--item--value'>{{armor.weight}}</td>
+      </ng-container>
+  
+      <!-- Rarity Column -->
+      <ng-container matColumnDef="rarity">
+        <th mat-header-cell *matHeaderCellDef class='character-edit--inventory--list--item--header'>Rarity</th>
+        <td mat-cell *matCellDef="let armor" class='character-edit--inventory--list--item--value'>{{rarityToString(armor.rarity)}}</td>
+      </ng-container>
+  
+      <!-- Equip -->
+      <ng-container matColumnDef="equip">
+        <th mat-header-cell *matHeaderCellDef class='character-edit--inventory--list--item--header'>Equip</th>
+        <td mat-cell *matCellDef="let armor" class='character-edit--inventory--list--item--value'>
+          <button *ngIf='!armor.equipped' class='character-edit--inventory--equip' mat-raised-button color=primary (click)='equipArmor($event, armor)'>Equip</button>
+          <button *ngIf='armor.equipped' class='character-edit--inventory--equip' mat-raised-button color=error (click)='unequipArmor($event, armor)'>Unequip</button>
+        </td>
+      </ng-container>
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumnsArmor"></tr>
+      <tr
+          mat-row
+          (click)='armorClick(row)'
+          class='character-edit--inventory--list--item rarity-{{row.rarity}}'
+          *matRowDef="let row; columns: displayedColumnsArmor;"
+      ></tr>
+    </table>
+  </div>
+  <div *ngIf='character.items.length > 0'>
+    <h4 class='character-edit--inventory--header'>Items</h4>
+    <table #items class='character-edit--inventory--list' mat-table [dataSource]="character.items">
+      <!-- Name Column -->
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef class='character-edit--inventory--list--item--header'>Name</th>
+        <td mat-cell *matCellDef="let item" class='character-edit--inventory--list--item--value'>{{item.name}}</td>
+      </ng-container>
+  
+      <!-- Weight Column -->
+      <ng-container matColumnDef="weight">
+        <th mat-header-cell *matHeaderCellDef class='character-edit--inventory--list--item--header'>Weight</th>
+        <td mat-cell *matCellDef="let item" class='character-edit--inventory--list--item--value'>{{item.weight}}</td>
+      </ng-container>
+  
+      <!-- Rarity Column -->
+      <ng-container matColumnDef="rarity">
+        <th mat-header-cell *matHeaderCellDef class='character-edit--inventory--list--item--header'>Rarity</th>
+        <td mat-cell *matCellDef="let item" class='character-edit--inventory--list--item--value'>{{rarityToString(item.rarity)}}</td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr
+          mat-row
+          (click)='itemClick(row)'
+          class='character-edit--inventory--list--item rarity-{{row.rarity}}'
+          *matRowDef="let row; columns: displayedColumns;"
+      ></tr>
+    </table>
+  </div>
+  <div class='character-edit--inventory--text-container' *ngIf='character.weapons.length <= 0 && character.shields.length <= 0 && character.armors.length <= 0 && character.items.length <= 0'>
+    <p class='character-edit--inventory--text-message'>No items in your inventory.</p>
+  </div>
+</div>

@@ -1,6 +1,17 @@
-import { Feature } from "./feature";
+import { Rarity } from "../enums/rarity";
 
-export interface Item {
-  name: string,
-  traits: Array<Feature>
-}
+export class Item {
+  name: string | undefined;
+  weight: number | undefined;
+  rarity: Rarity | undefined;
+  requiresAttunement: boolean;
+  description: string | undefined;
+  equippable: boolean;
+  equipped: boolean;
+
+  constructor() {
+    this.requiresAttunement = false;
+    this.equippable = false;
+    this.equipped = false;
+  }
+};

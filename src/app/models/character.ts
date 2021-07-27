@@ -7,6 +7,12 @@ import { calculateAbilityCheckBonus } from "../utils/calculateAbilityCheckBonus"
 import { Ability, AbilityCheck } from "../enums/ability";
 import { abilityCheckAbilityMap } from "../constants/ability-check-map";
 import { Dice } from "./dice";
+import { Armor } from "./armor";
+import { Shield } from "./shield";
+import { Weapon } from "./weapon";
+import { Item } from "./item";
+import { Currency } from "./currency";
+import { Rarity, raritySelectMap } from "../enums/rarity";
 
 export class Character {
 
@@ -168,6 +174,41 @@ export class Character {
       return this.hitDice.value + this.constitutionModifier + (((this.level || 0) - 1) * (this.constitutionModifier + (this.hitDice.value / 2) + 1));
     } 
   };
+
+  //inventory
+  public equippedArmor: Armor | undefined;
+  public equippedMainHand: Weapon | Shield | undefined;
+  public equippedOffHand: Weapon | Shield | undefined;
+  public equippedItems: Array<Item> = [];
+
+  public currencies: Array<Currency> = [];
+  public items: Array<Item> = [];
+  public weapons: Array<Weapon> = [];
+  public shields: Array<Shield> = [];
+  public armors: Array<Armor> = [];
+
+  public get armorClass(): number {
+    let armorClassHold = 10 + this.dexterityModifier;
+
+    if (this.armors) {
+      for (const armor of this.armors) {
+        if (armor.equipped) {
+          armorClassHold = armor.calculateArmorClass(this.dexterityModifier);
+          break;
+        }
+      }
+    }
+
+    if (this.shields) {
+      for (const shield of this.shields) {
+        if (shield.equipped) {
+          armorClassHold += (shield.armorBonus || 0);
+        }
+      }
+    }
+
+    return armorClassHold;
+  }
 
   public getParentAbilityValue(skill: AbilityCheck) {
     switch(abilityCheckAbilityMap.get(skill)) {

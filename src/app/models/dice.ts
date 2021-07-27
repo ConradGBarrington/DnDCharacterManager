@@ -1,54 +1,35 @@
-export interface Dice {
-  name: string,
-  value: number,
+export class Dice {
+  public name: string;
+  public value: number;
+
+  constructor(name: string, value: number) {
+    this.name = name;
+    this.value = value;
+  }
 };
 
 export const AllDice: Array<Dice> = [
-  {
-    name: 'Coin',
-    value: 2,
-  },
-  {
-    name: 'D4',
-    value: 4,
-  },
-  {
-    name: 'D6',
-    value: 6,
-  },
-  {
-    name: 'D8',
-    value: 8,
-  },
-  {
-    name: 'D10',
-    value: 10,
-  },
-  {
-    name: 'D12',
-    value: 12,
-  },
-  {
-    name: 'D20',
-    value: 20,
-  },
+  new Dice('Coin', 2),
+  new Dice('D4', 4),
+  new Dice('D6', 6),
+  new Dice('D8', 8),
+  new Dice('D10', 10),
+  new Dice('D12', 12),
+  new Dice('D20', 20),
 ];
 
 export const HitDice: Array<Dice> = [
-  {
-    name: 'D6',
-    value: 6,
-  },
-  {
-    name: 'D8',
-    value: 8,
-  },
-  {
-    name: 'D10',
-    value: 10,
-  },
-  {
-    name: 'D12',
-    value: 12,
-  }
+  new Dice('D6', 6),
+  new Dice('D8', 8),
+  new Dice('D10', 10),
+  new Dice('D12', 12),
+];
+
+export const DamageDice: Array<Dice> = [
+  new Dice('D4', 4),
+  new Dice('D6', 6),
+  new Dice('D8', 8),
+  new Dice('D10', 10),
+  new Dice('D12', 12),
+  new Dice('D20', 20),
 ];

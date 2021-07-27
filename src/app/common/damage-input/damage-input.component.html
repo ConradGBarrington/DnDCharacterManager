@@ -1,0 +1,20 @@
+<div class='damage'>
+  <mat-form-field class='damage--field'>
+    <input matNativeControl type='number' min=0 placeholder='Dice Count' [(ngModel)]="damage.diceCount">
+  </mat-form-field>
+  <mat-form-field class='damage--field'>
+    <mat-label>Damage Dice</mat-label>
+    <mat-select [(ngModel)]='damage.dice'>
+      <mat-option *ngFor="let die of DamageDice" [value]="die">
+        {{die.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field class='damage--field'>
+    <input matNativeControl type='number' placeholder='Modifier' [(ngModel)]="damage.modifier">
+  </mat-form-field>
+  <mat-form-field class='damage--field'>
+    <input matNativeControl type='text' placeholder='Damage Type' [(ngModel)]="damage.type">
+  </mat-form-field>
+  <button class='damage--delete' mat-raised-button color=error (click)='deleteDamage()'>Remove Damage</button>
+</div>

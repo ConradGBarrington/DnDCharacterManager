@@ -1,0 +1,18 @@
+@import '../../../globals.scss';
+
+.damage {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+  &--field {
+    font-size: $font-size-field;
+    width: 15%;
+    margin-right: $element-small-spacing;
+  }
+  
+  &--delete {
+    font-size: $font-size-field;
+    width: 15%;
+  }
+}

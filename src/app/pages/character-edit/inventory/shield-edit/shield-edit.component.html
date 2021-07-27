@@ -1,0 +1,26 @@
+<p class='item-edit--header'>{{modalName}}</p>
+<div>
+  <mat-form-field class='item-edit--field'>
+    <input matNativeControl type='text' placeholder='Shield Name' [(ngModel)]="shield.name">
+  </mat-form-field>
+  <mat-form-field class='item-edit--field'>
+    <input matNativeControl type='number' min=0 placeholder='Armor Bonus' [(ngModel)]="shield.armorBonus">
+  </mat-form-field>
+  <mat-form-field class='item-edit--field'>
+    <input matNativeControl type='number' min=0 placeholder='Weight' [(ngModel)]="shield.weight">
+  </mat-form-field>
+  <mat-form-field class='item-edit--field'>
+    <mat-label>Rarity</mat-label>
+    <mat-select [(ngModel)]='shield.rarity'>
+      <mat-option *ngFor="let rarity of raritySelectMap" [value]="rarity.value">
+        {{rarity.key}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-checkbox class="item-edit--field" [(ngModel)]="shield.requiresAttunement">Requires Attunement</mat-checkbox>
+  <mat-form-field class='item-edit--field'>
+    <textarea class='item-edit--description' matNativeControl placeholder='Item Description' [(ngModel)]="shield.description"></textarea>
+  </mat-form-field>
+  <button class='item-edit--save' mat-raised-button color=primary (click)='addShield()'>Save</button>
+  <button class='item-edit--delete' mat-raised-button color=error (click)='deleteShield()'>{{addMode ? 'Cancel' : 'Delete'}}</button>
+</div>

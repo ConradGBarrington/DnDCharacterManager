@@ -1,0 +1,31 @@
+@import '../../../../../globals.scss';
+
+.item-edit {
+  &--header {
+    font-size: $font-size-emphasis;
+  }
+
+  &--field {
+    font-size: $font-size-field;
+    width: 100%;
+  }
+
+  &--description {
+    max-height: 12rem;
+    min-height: 6rem;
+  }
+
+  &--save {
+    font-size: $font-size-field;
+    margin-right: $element-small-spacing;
+  }
+
+  &--delete {
+    font-size: $font-size-field;
+    margin-right: $element-small-spacing;
+  }
+
+  &--add-damage {
+    font-size: $font-size-field;
+  }
+}

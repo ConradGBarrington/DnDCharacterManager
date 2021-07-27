@@ -1,7 +1,22 @@
 import { Item } from './item';
 
-export interface Armor extends Item {
-  baseValue: number,
-  addDexMod: boolean,
-  stealthDisadvantage: boolean,
+export class Armor extends Item {
+  baseValue: number | undefined;
+  addDexMod: boolean;
+  stealthDisadvantage: boolean;
+
+  constructor() {
+    super();
+    this.addDexMod = false;
+    this.stealthDisadvantage = false;
+    this.equippable = true;
+  }
+
+  calculateArmorClass(dexterityModifier: number): number {
+    if (this.addDexMod) {
+      return (this.baseValue || 0) + dexterityModifier;
+    } else {
+      return (this.baseValue || 0);
+    }
+  }
 };

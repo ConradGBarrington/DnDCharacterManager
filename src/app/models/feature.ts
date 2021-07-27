@@ -1,4 +1,6 @@
-export interface Feature {
-  name: string,
-  description: string,
+export class Feature {
+  name: string | undefined;
+  description: string | undefined;
+
+  constructor() {}
 }

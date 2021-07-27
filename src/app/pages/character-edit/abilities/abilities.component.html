@@ -1,5 +1,16 @@
 <div class='character-edit--ability-scores'>
   <h3 class='character-edit--header'>Ability Scores</h3>
+  <div *ngIf='newCharacter' class='character-edit--roll'>
+    <button *ngIf='!ability1 || !ability2 || !ability3 || !ability4 || !ability5 || !ability6' class='character-edit--roll--click' mat-raised-button color=primary (click)='rollAbilities()'>Roll Abilities</button>
+    <div class="character-edit--roll--container" *ngIf='ability1 && ability2 && ability3 && ability4 && ability5 && ability6'>
+      <p class='character-edit--roll--value'>{{ability1}}</p>
+      <p class='character-edit--roll--value'>{{ability3}}</p>
+      <p class='character-edit--roll--value'>{{ability4}}</p>
+      <p class='character-edit--roll--value'>{{ability2}}</p>
+      <p class='character-edit--roll--value'>{{ability5}}</p>
+      <p class='character-edit--roll--value'>{{ability6}}</p>
+    </div>
+  </div>
   <div class='character-edit--ability'>
     <mat-form-field class='character-edit--field'>
       <input matNativeControl type='number' min=0 placeholder='Strength' [(ngModel)]="character.strength" (ngModelChange)="abilityChange(0)">

@@ -1,0 +1,47 @@
+<p class='item-edit--header'>{{modalName}}</p>
+<div>
+  <mat-form-field class='item-edit--field'>
+    <input matNativeControl type='text' placeholder='Weapon Name' [(ngModel)]="weapon.name">
+  </mat-form-field>
+  <app-damage-input *ngFor='let damage of weapon.damage' [damage]='damage' [damageEmitter]='damageDeleteHandler'></app-damage-input>
+  <button class='item-edit--add-damage' mat-raised-button color=primary (click)='addDamage()'>Add Damage</button>
+  <mat-form-field class='item-edit--field'>
+    <input matNativeControl type='number' min=0 placeholder='Attack Bonus' [(ngModel)]="weapon.attackBonus">
+  </mat-form-field>
+  <mat-form-field class='item-edit--field'>
+    <input matNativeControl type='number' min=0 placeholder='Damage Bonus' [(ngModel)]="weapon.damageBonus">
+  </mat-form-field>
+  <mat-form-field class='item-edit--field'>
+    <mat-label>Handedness</mat-label>
+    <mat-select [(ngModel)]='weapon.handedness'>
+      <mat-option *ngFor="let handedness of handednessSelectMap" [value]="handedness.value">
+        {{handedness.key}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field class='item-edit--field'>
+    <mat-label>Weapon Ability</mat-label>
+    <mat-select [(ngModel)]='weapon.abilityType'>
+      <mat-option *ngFor="let ability of abilitySelectMap" [value]="ability.value">
+        {{ability.key}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field class='item-edit--field'>
+    <input matNativeControl type='number' min=0 placeholder='Weight' [(ngModel)]="weapon.weight">
+  </mat-form-field>
+  <mat-form-field class='item-edit--field'>
+    <mat-label>Rarity</mat-label>
+    <mat-select [(ngModel)]='weapon.rarity'>
+      <mat-option *ngFor="let rarity of raritySelectMap" [value]="rarity.value">
+        {{rarity.key}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-checkbox class="item-edit--field" [(ngModel)]="weapon.requiresAttunement">Requires Attunement</mat-checkbox>
+  <mat-form-field class='item-edit--field'>
+    <textarea class='item-edit--description' matNativeControl placeholder='Item Description' [(ngModel)]="weapon.description"></textarea>
+  </mat-form-field>
+  <button class='item-edit--save' mat-raised-button color=primary (click)='addWeapon()'>Save</button>
+  <button class='item-edit--delete' mat-raised-button color=error (click)='deleteWeapon()'>{{addMode ? 'Cancel' : 'Delete'}}</button>
+</div>
