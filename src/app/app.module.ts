@@ -34,6 +34,10 @@ import { ArmorEditComponent } from './pages/character-edit/inventory/armor-edit/
 import { ShieldEditComponent } from './pages/character-edit/inventory/shield-edit/shield-edit.component';
 import { WeaponEditComponent } from './pages/character-edit/inventory/weapon-edit/weapon-edit.component';
 import { DamageInputComponent } from './common/damage-input/damage-input.component';
+import { ProficienciesComponent } from './pages/character-edit/proficiencies/proficiencies.component';
+import { CurrenciesComponent } from './pages/character-edit/currencies/currencies.component';
+import { AddLanguageComponent } from './pages/character-edit/proficiencies/add-language/add-language.component';
+import { AddProficiencyComponent } from './pages/character-edit/proficiencies/add-proficiency/add-proficiency.component';
 
 
 
@@ -54,7 +58,11 @@ import { DamageInputComponent } from './common/damage-input/damage-input.compone
     ArmorEditComponent,
     ShieldEditComponent,
     WeaponEditComponent,
-    DamageInputComponent
+    DamageInputComponent,
+    ProficienciesComponent,
+    CurrenciesComponent,
+    AddLanguageComponent,
+    AddProficiencyComponent,
   ],
   imports: [
     BrowserModule,

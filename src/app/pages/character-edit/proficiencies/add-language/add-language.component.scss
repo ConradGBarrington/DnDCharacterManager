@@ -1,0 +1,21 @@
+@import '../../../../../globals.scss';
+
+.language {
+  &--header {
+    font-size: $font-size-emphasis;
+  }
+
+  &--field {
+    font-size: $font-size-field;
+    width: 100%;
+  }
+
+  &--save {
+    font-size: $font-size-field;
+    margin-right: $element-small-spacing;
+  }
+
+  &--delete {
+    font-size: $font-size-field;
+  }
+}

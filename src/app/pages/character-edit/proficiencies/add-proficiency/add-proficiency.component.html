@@ -1,0 +1,8 @@
+<p class='proficiency--header'>{{modalName}}</p>
+<div>
+  <mat-form-field class='proficiency--field'>
+    <input matNativeControl type='text' placeholder='Item Name' [(ngModel)]="proficiency">
+  </mat-form-field>
+  <button class='proficiency--save' mat-raised-button color=primary (click)='addProficiency()'>Save</button>
+  <button class='proficiency--delete' mat-raised-button color=error (click)='deleteProficiency()'>{{addMode ? 'Cancel' : 'Delete'}}</button>
+</div>

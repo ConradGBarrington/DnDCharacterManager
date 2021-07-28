@@ -1,0 +1,6 @@
+<div class='character-edit--currencies'>
+  <h3 class ='character-edit--currencies--header'>Currencies</h3>
+  <mat-form-field *ngFor='let currency of character.currencies' class='character-edit--field'>
+    <input matNativeControl type='number' min=0 placeholder='{{currency.name}}' [(ngModel)]="currency.quantity">
+  </mat-form-field>
+</div>

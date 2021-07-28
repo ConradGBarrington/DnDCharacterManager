@@ -1,0 +1,39 @@
+@import '../../../../globals.scss';
+
+.character-edit {
+  &--header {
+    font-size: $section-header;
+    width: 100%;
+  }
+
+  &--proficiencies {
+    width: 100%;
+    display: flex;
+    margin-top: $element-spacing;
+    margin-bottom: $element-spacing;
+    flex-wrap: wrap;
+
+
+    &--languages {
+      width: 50%;
+    }
+
+    &--other {
+      width: 50%;
+    }
+
+    &--header {
+      font-size: $font-size-emphasis;
+      margin: 0;
+    }
+
+    &--item {
+      font-size: $font-size-field;
+    }
+
+    &--save {
+      font-size: $font-size-field;
+      margin-top: $element-small-spacing;
+    }
+  }
+}

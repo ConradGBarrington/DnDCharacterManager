@@ -1,0 +1,24 @@
+@import '../../../../globals.scss';
+
+.character-edit {
+  &--currencies {
+    margin-top: $element-spacing;
+    margin-bottom: $element-spacing;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    &--header {
+      font-size: $section-header;
+      width: 100%;
+    }
+    
+  }
+
+  &--field {
+    font-size: $font-size-field;
+    border: $box-border;
+    border-radius: $box-radius;
+    padding: $element-small-spacing;
+  }
+}

@@ -6,15 +6,11 @@
   <mat-divider [inset]="true"></mat-divider>
   <app-combat-stats [character]='character'></app-combat-stats>
   <mat-divider [inset]="true"></mat-divider>
+  <app-currencies [character]='character'></app-currencies>
+  <mat-divider [inset]="true"></mat-divider>
   <app-inventory [character]='character'></app-inventory>
   <mat-divider [inset]="true"></mat-divider>
-  <div class='character-edit--proficiencies'>
-    <p>List of proficiencies, all just strings</p>
-  </div>
-  <mat-divider [inset]="true"></mat-divider>
-  <div class='character-edit--languages'>
-    <p>List of langauges spoken, all just strings</p>
-  </div>
+  <app-proficiencies [character]='character'></app-proficiencies>
   <mat-divider [inset]="true"></mat-divider>
   <div class='character-edit--features'>
     <p>List of all features, uses feature interface</p>

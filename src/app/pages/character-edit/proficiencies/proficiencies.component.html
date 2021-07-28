@@ -1,0 +1,17 @@
+<div class='character-edit--proficiencies'>
+  <h3 class='character-edit--header'>Proficiencies</h3>
+  <div class='character-edit--proficiencies--languages'>
+    <h4 class='character-edit--proficiencies--header'>Languages</h4>
+    <mat-action-list role="list">
+      <button class='character-edit--proficiencies--item' mat-list-item *ngFor='let language of character.languages' role="listitem" (click)='languageClick(language)'>- {{language}}</button>
+    </mat-action-list>
+    <button class='character-edit--proficiencies--save' mat-raised-button color=primary (click)='addLanguage()'>Add Language</button>
+  </div>
+  <div class='character-edit--proficiencies--other'>
+    <h4 class='character-edit--proficiencies--header'>Proficiencies</h4>
+    <mat-action-list role="list">
+      <button class='character-edit--proficiencies--item' mat-list-item *ngFor='let proficiency of character.proficiencies' role="listitem" (click)='proficiencyClick(proficiency)'>- {{proficiency}}</button>
+    </mat-action-list>
+    <button class='character-edit--proficiencies--save' mat-raised-button color=primary (click)='addProficiency()'>Add Proficiency</button>
+  </div>
+</div>

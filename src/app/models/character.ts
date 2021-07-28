@@ -181,7 +181,13 @@ export class Character {
   public equippedOffHand: Weapon | Shield | undefined;
   public equippedItems: Array<Item> = [];
 
-  public currencies: Array<Currency> = [];
+  public currencies: Array<Currency> = [
+    new Currency('Copper'),
+    new Currency('Silver'),
+    new Currency('Electrum'),
+    new Currency('Gold'),
+    new Currency('Platinum'),
+  ];
   public items: Array<Item> = [];
   public weapons: Array<Weapon> = [];
   public shields: Array<Shield> = [];
@@ -209,6 +215,9 @@ export class Character {
 
     return armorClassHold;
   }
+
+  public languages: Array<string> = [];
+  public proficiencies: Array<string> = [];
 
   public getParentAbilityValue(skill: AbilityCheck) {
     switch(abilityCheckAbilityMap.get(skill)) {

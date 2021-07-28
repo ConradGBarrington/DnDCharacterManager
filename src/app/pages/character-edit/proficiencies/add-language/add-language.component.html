@@ -1,0 +1,8 @@
+<p class='language--header'>{{modalName}}</p>
+<div>
+  <mat-form-field class='language--field'>
+    <input matNativeControl type='text' placeholder='Item Name' [(ngModel)]="language">
+  </mat-form-field>
+  <button class='language--save' mat-raised-button color=primary (click)='addLanguage()'>Save</button>
+  <button class='language--delete' mat-raised-button color=error (click)='deleteLanguage()'>{{addMode ? 'Cancel' : 'Delete'}}</button>
+</div>
