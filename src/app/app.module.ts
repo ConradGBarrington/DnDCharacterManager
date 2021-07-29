@@ -38,6 +38,8 @@ import { ProficienciesComponent } from './pages/character-edit/proficiencies/pro
 import { CurrenciesComponent } from './pages/character-edit/currencies/currencies.component';
 import { AddLanguageComponent } from './pages/character-edit/proficiencies/add-language/add-language.component';
 import { AddProficiencyComponent } from './pages/character-edit/proficiencies/add-proficiency/add-proficiency.component';
+import { FeaturesComponent } from './pages/character-edit/features/features.component';
+import { AddFeatureComponent } from './pages/character-edit/features/add-feature/add-feature.component';
 
 
 
@@ -63,6 +65,8 @@ import { AddProficiencyComponent } from './pages/character-edit/proficiencies/ad
     CurrenciesComponent,
     AddLanguageComponent,
     AddProficiencyComponent,
+    FeaturesComponent,
+    AddFeatureComponent,
   ],
   imports: [
     BrowserModule,

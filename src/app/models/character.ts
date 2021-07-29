@@ -13,6 +13,7 @@ import { Weapon } from "./weapon";
 import { Item } from "./item";
 import { Currency } from "./currency";
 import { Rarity, raritySelectMap } from "../enums/rarity";
+import { Feature } from "./feature";
 
 export class Character {
 
@@ -218,6 +219,7 @@ export class Character {
 
   public languages: Array<string> = [];
   public proficiencies: Array<string> = [];
+  public features: Array<Feature> = [];
 
   public getParentAbilityValue(skill: AbilityCheck) {
     switch(abilityCheckAbilityMap.get(skill)) {

@@ -1,0 +1,10 @@
+<div class='character-edit--features'>
+  <h3 class='character-edit--features--header'>Features</h3>
+  <div class='character-edit--features--feature' *ngFor='let feature of character.features' (click)='featureClick(feature)'>
+    <h4 class='character-edit--features--feature--title'>{{feature.name}}</h4>
+    <p class='character-edit--features--feature--text'>{{feature.description}}</p>
+  </div>
+  <div class='character-edit--features--save-row'>
+    <button class='character-edit--features--save' mat-raised-button color=primary (click)='addFeature()'>Add Feature</button>
+  </div>
+</div>

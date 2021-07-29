@@ -1,0 +1,41 @@
+@import '../../../../globals.scss';
+
+.character-edit {
+  &--features {
+    margin-top: $element-spacing;
+    margin-bottom: $element-spacing;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    &--header {
+      font-size: $section-header;
+      width: 100%;
+    }
+
+    &--feature {
+      width: 45%;
+      border: $box-border;
+      border-radius: $box-radius;
+      padding: $element-small-spacing;
+
+      &--title {
+        font-size: $font-size-emphasis;
+      }
+
+      &--text {
+        font-size: $font-size-field;
+        width: 100%;
+      }
+    }
+
+    &--save-row {
+      width: 100%;
+    }
+
+    &--save {
+      margin-top: $element-small-spacing;
+      font-size: $font-size-field;
+    }
+  }
+}

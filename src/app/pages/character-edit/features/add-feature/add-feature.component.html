@@ -1,0 +1,11 @@
+<p class='feature--header'>{{modalName}}</p>
+<div>
+  <mat-form-field class='feature--field'>
+    <input matNativeControl type='text' placeholder='Feature Name' [(ngModel)]="feature.name">
+  </mat-form-field>
+  <mat-form-field class='feature--field'>
+    <textarea class='feature--field-textarea' matNativeControl placeholder='Description' [(ngModel)]="feature.description"></textarea>
+  </mat-form-field>
+  <button class='feature--save' mat-raised-button color=primary (click)='addFeature()'>Save</button>
+  <button class='feature--delete' mat-raised-button color=error (click)='deleteFeature()'>{{addMode ? 'Cancel' : 'Delete'}}</button>
+</div>

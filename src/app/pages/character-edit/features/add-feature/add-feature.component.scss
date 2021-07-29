@@ -1,0 +1,25 @@
+@import '../../../../../globals.scss';
+
+.feature {
+  &--header {
+    font-size: $font-size-emphasis;
+  }
+
+  &--field {
+    font-size: $font-size-field;
+    width: 100%;
+  }
+
+  &--field-textarea {
+    height: 12rem;
+  }
+
+  &--save {
+    font-size: $font-size-field;
+    margin-right: $element-small-spacing;
+  }
+
+  &--delete {
+    font-size: $font-size-field;
+  }
+}
