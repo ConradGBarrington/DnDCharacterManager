@@ -231,6 +231,15 @@ export class Character {
   public backstory: string | undefined;
   public relationships: Array<Relationship> = [];
 
+  //appearance
+  public age: number | undefined;
+  public height: string | undefined;
+  public weight: string | undefined;
+  public eyes: string | undefined;
+  public skin: string | undefined;
+  public hair: string | undefined;
+  public appearanceDescription: string | undefined;
+
   public getParentAbilityValue(skill: AbilityCheck) {
     switch(abilityCheckAbilityMap.get(skill)) {
       case Ability.STRENGTH: {
