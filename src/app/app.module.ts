@@ -41,6 +41,7 @@ import { AddProficiencyComponent } from './pages/character-edit/proficiencies/ad
 import { FeaturesComponent } from './pages/character-edit/features/features.component';
 import { AddFeatureComponent } from './pages/character-edit/features/add-feature/add-feature.component';
 import { PersonalityComponent } from './pages/character-edit/personality/personality.component';
+import { BackstoryComponent } from './pages/character-edit/backstory/backstory.component';
 
 
 
@@ -69,6 +70,7 @@ import { PersonalityComponent } from './pages/character-edit/personality/persona
     FeaturesComponent,
     AddFeatureComponent,
     PersonalityComponent,
+    BackstoryComponent,
   ],
   imports: [
     BrowserModule,

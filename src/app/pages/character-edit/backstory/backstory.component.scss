@@ -1,0 +1,26 @@
+@import '../../../../globals.scss';
+
+.character-edit {
+
+  &--backstory {
+    margin-top: $element-spacing;
+    margin-bottom: $element-spacing;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  &--header {
+    font-size: $section-header;
+    width: 100%;
+  }
+
+  &--field {
+    width: 100%;
+    font-size: $font-size-field;
+  }
+
+  &--field-textarea {
+    height: 16rem;
+  }
+}

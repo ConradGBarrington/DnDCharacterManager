@@ -227,6 +227,7 @@ export class Character {
   public ideals: string | undefined;
   public bonds: string | undefined;
   public flaws: string | undefined;
+  public backstory: string | undefined;
 
   public getParentAbilityValue(skill: AbilityCheck) {
     switch(abilityCheckAbilityMap.get(skill)) {
