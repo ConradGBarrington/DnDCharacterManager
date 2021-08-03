@@ -40,6 +40,7 @@ import { AddLanguageComponent } from './pages/character-edit/proficiencies/add-l
 import { AddProficiencyComponent } from './pages/character-edit/proficiencies/add-proficiency/add-proficiency.component';
 import { FeaturesComponent } from './pages/character-edit/features/features.component';
 import { AddFeatureComponent } from './pages/character-edit/features/add-feature/add-feature.component';
+import { PersonalityComponent } from './pages/character-edit/personality/personality.component';
 
 
 
@@ -67,6 +68,7 @@ import { AddFeatureComponent } from './pages/character-edit/features/add-feature
     AddProficiencyComponent,
     FeaturesComponent,
     AddFeatureComponent,
+    PersonalityComponent,
   ],
   imports: [
     BrowserModule,

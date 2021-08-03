@@ -217,9 +217,16 @@ export class Character {
     return armorClassHold;
   }
 
+  //traits
   public languages: Array<string> = [];
   public proficiencies: Array<string> = [];
   public features: Array<Feature> = [];
+
+  //personality
+  public personalityTraits: string | undefined;
+  public ideals: string | undefined;
+  public bonds: string | undefined;
+  public flaws: string | undefined;
 
   public getParentAbilityValue(skill: AbilityCheck) {
     switch(abilityCheckAbilityMap.get(skill)) {

@@ -14,20 +14,7 @@
   <mat-divider [inset]="true"></mat-divider>
   <app-features [character]='character'></app-features>
   <mat-divider [inset]="true"></mat-divider>
-  <div class='character-edit--features'>
-    <mat-form-field>
-      <textarea class='character-edit--field' matNativeControl placeholder='Personality Traits'></textarea>
-    </mat-form-field>
-    <mat-form-field>
-      <textarea class='character-edit--field' matNativeControl placeholder='Ideals'></textarea>
-    </mat-form-field>
-    <mat-form-field>
-      <textarea class='character-edit--field' matNativeControl placeholder='Bonds'></textarea>
-    </mat-form-field>
-    <mat-form-field>
-      <textarea class='character-edit--field' matNativeControl placeholder='Flaws'></textarea>
-    </mat-form-field>
-  </div>
+  <app-personality [character]='character'></app-personality>
   <mat-divider [inset]="true"></mat-divider>
   <div class='character-edit--appearance'>
     <mat-form-field>
