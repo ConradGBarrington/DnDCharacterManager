@@ -18,6 +18,8 @@
   <mat-divider [inset]="true"></mat-divider>
   <app-backstory [character]='character'></app-backstory>
   <mat-divider [inset]="true"></mat-divider>
+  <app-relationships [character]='character'></app-relationships>
+  <mat-divider [inset]="true"></mat-divider>
   <div class='character-edit--appearance'>
     <mat-form-field>
       <input class='character-edit--field' matNativeControl type='number' placeholder='Age'>
@@ -40,11 +42,6 @@
     <mat-form-field>
       <textarea class='character-edit--field' matNativeControl placeholder='Appearance Description'></textarea>
     </mat-form-field>
-  </div>
-  <mat-divider [inset]="true"></mat-divider>
-  
-  <div class='character-edit--relationships'>
-    <p>Relationship name list, click to open modal with full details and edit and delete button</p>
   </div>
   <mat-divider [inset]="true"></mat-divider>
   <div class='character-edit--spells'>

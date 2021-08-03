@@ -1,0 +1,24 @@
+@import '../../../../globals.scss';
+
+.character-edit {
+  &--relationships {
+    margin-top: $element-spacing;
+    margin-bottom: $element-spacing;
+
+    &--header {
+      font-size: $section-header;
+    }
+
+    &--details {
+      font-size: $font-size-field;
+    }
+
+    &--save {
+      font-size: $font-size-field;
+    }
+
+    &--save-row {
+      margin-top: $element-small-spacing;
+    }
+  }
+}

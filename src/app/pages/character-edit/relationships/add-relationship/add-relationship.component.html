@@ -1,0 +1,14 @@
+<p class='relationship--header'>{{modalName}}</p>
+<div>
+  <mat-form-field class='relationship--field'>
+    <input matNativeControl type='text' placeholder='Item Name' [(ngModel)]="relationship.relationName">
+  </mat-form-field>
+  <mat-form-field class='relationship--field'>
+    <input matNativeControl type='text' placeholder='Relationship Type' [(ngModel)]="relationship.type">
+  </mat-form-field>
+  <mat-form-field class='relationship--field'>
+    <textarea class='relationship--field-textarea' matNativeControl placeholder='Description' [(ngModel)]="relationship.description"></textarea>
+  </mat-form-field>
+  <button class='relationship--save' mat-raised-button color=primary (click)='addRelationship()'>Save</button>
+  <button class='relationship--delete' mat-raised-button color=error (click)='deleteRelationship()'>{{addMode ? 'Cancel' : 'Delete'}}</button>
+</div>

@@ -14,6 +14,7 @@ import { Item } from "./item";
 import { Currency } from "./currency";
 import { Rarity, raritySelectMap } from "../enums/rarity";
 import { Feature } from "./feature";
+import { Relationship } from "./relationships";
 
 export class Character {
 
@@ -228,6 +229,7 @@ export class Character {
   public bonds: string | undefined;
   public flaws: string | undefined;
   public backstory: string | undefined;
+  public relationships: Array<Relationship> = [];
 
   public getParentAbilityValue(skill: AbilityCheck) {
     switch(abilityCheckAbilityMap.get(skill)) {

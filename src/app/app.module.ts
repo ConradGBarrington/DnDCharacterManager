@@ -42,6 +42,8 @@ import { FeaturesComponent } from './pages/character-edit/features/features.comp
 import { AddFeatureComponent } from './pages/character-edit/features/add-feature/add-feature.component';
 import { PersonalityComponent } from './pages/character-edit/personality/personality.component';
 import { BackstoryComponent } from './pages/character-edit/backstory/backstory.component';
+import { RelationshipsComponent } from './pages/character-edit/relationships/relationships.component';
+import { AddRelationshipComponent } from './pages/character-edit/relationships/add-relationship/add-relationship.component';
 
 
 
@@ -71,6 +73,8 @@ import { BackstoryComponent } from './pages/character-edit/backstory/backstory.c
     AddFeatureComponent,
     PersonalityComponent,
     BackstoryComponent,
+    RelationshipsComponent,
+    AddRelationshipComponent,
   ],
   imports: [
     BrowserModule,

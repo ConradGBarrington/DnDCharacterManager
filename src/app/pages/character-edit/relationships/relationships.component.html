@@ -1,0 +1,9 @@
+<div class='character-edit--relationships'>
+  <h3 class='character-edit--relationships--header'>Relationships</h3>
+  <mat-action-list>
+    <button class='character-edit--relationships--details' mat-list-item *ngFor='let relationship of character.relationships' (click)="relationshipClick(relationship)">{{relationship.relationName}} - {{relationship.type}}</button>
+  </mat-action-list>
+  <div class='character-edit--relationships--save-row'>
+    <button class='character-edit--relationships--save' mat-raised-button color=primary (click)='addRelationship()'>Add Feature</button>
+  </div>
+</div>
