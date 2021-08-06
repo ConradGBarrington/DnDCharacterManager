@@ -45,6 +45,8 @@ import { BackstoryComponent } from './pages/character-edit/backstory/backstory.c
 import { RelationshipsComponent } from './pages/character-edit/relationships/relationships.component';
 import { AddRelationshipComponent } from './pages/character-edit/relationships/add-relationship/add-relationship.component';
 import { AppearanceComponent } from './pages/character-edit/appearance/appearance.component';
+import { SpellListComponent } from './pages/character-edit/spell-list/spell-list.component';
+import { SpellEditComponent } from './pages/character-edit/spell-list/spell-edit/spell-edit.component';
 
 
 
@@ -77,6 +79,8 @@ import { AppearanceComponent } from './pages/character-edit/appearance/appearanc
     RelationshipsComponent,
     AddRelationshipComponent,
     AppearanceComponent,
+    SpellListComponent,
+    SpellEditComponent,
   ],
   imports: [
     BrowserModule,

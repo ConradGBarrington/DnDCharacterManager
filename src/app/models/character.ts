@@ -15,6 +15,7 @@ import { Currency } from "./currency";
 import { Rarity, raritySelectMap } from "../enums/rarity";
 import { Feature } from "./feature";
 import { Relationship } from "./relationships";
+import { Spell } from "./spell";
 
 export class Character {
 
@@ -239,6 +240,33 @@ export class Character {
   public skin: string | undefined;
   public hair: string | undefined;
   public appearanceDescription: string | undefined;
+
+  //spells list
+  public defaultSpellAbility: Ability | undefined;
+  public cantripsList: Array<Spell> = [];
+  public spellList1: Array<Spell> = [];
+  public spellList2: Array<Spell> = [];
+  public spellList3: Array<Spell> = [];
+  public spellList4: Array<Spell> = [];
+  public spellList5: Array<Spell> = [];
+  public spellList6: Array<Spell> = [];
+  public spellList7: Array<Spell> = [];
+  public spellList8: Array<Spell> = [];
+  public spellList9: Array<Spell> = [];
+
+  public get spells(): Array<Spell> {
+    return this.cantripsList.concat(
+      this.spellList1,
+      this.spellList2,
+      this.spellList3,
+      this.spellList4,
+      this.spellList5,
+      this.spellList6,
+      this.spellList7,
+      this.spellList8,
+      this.spellList9,
+    );
+  }
 
   public getParentAbilityValue(skill: AbilityCheck) {
     switch(abilityCheckAbilityMap.get(skill)) {

@@ -1,0 +1,45 @@
+@import '../../../../globals.scss';
+
+.character-edit {
+  &--spell-list {
+    margin-top: $element-spacing;
+    margin-bottom: $element-spacing;
+    display: flex;
+    flex-wrap: wrap;
+
+    &--header {
+      font-size: $section-header;
+    }
+
+
+    &--controls {
+      width: 100%;
+
+      &--field {
+        font-size: $font-size-field;
+        margin-right: $element-small-spacing;
+      }
+  
+      &--add {
+        font-size: $font-size-field;
+      }
+    }
+
+    
+  
+    &--level {
+      width: 50%;
+
+      &--header {
+        font-size: $font-size-emphasis;
+      }
+
+      &--spell {
+        font-size: $font-size-field;
+      }
+
+    }
+  }
+
+  
+}

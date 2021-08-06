@@ -1,0 +1,31 @@
+@import '../../../../../globals.scss';
+
+.spell-edit {
+  &--header {
+    font-size: $font-size-emphasis;
+  }
+
+  &--field {
+    width: 100%;
+    font-size: $font-size-field;
+  }
+
+  &--field-checkbox {
+    width: 50%;
+    font-size: $font-size-field;
+  }
+
+  &--divider {
+    margin-top: $element-small-spacing;
+    margin-bottom: $element-small-spacing;
+  }
+
+  &--save {
+    font-size: $font-size-field;
+    margin-right: $element-small-spacing;
+  }
+
+  &--delete {
+    font-size: $font-size-field;
+  }
+}

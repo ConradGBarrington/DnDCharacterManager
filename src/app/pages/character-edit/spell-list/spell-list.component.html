@@ -1,0 +1,74 @@
+<div class='character-edit--spell-list'>
+  <h3 class='character-edit--spell-list--header'>Spells List</h3>
+  <div class='character-edit--spell-list--controls'>
+    <mat-form-field class='character-edit--spell-list--controls--field'>
+      <mat-label>Spell Ability</mat-label>
+      <mat-select [(ngModel)]='character.defaultSpellAbility'>
+        <mat-option *ngFor="let ability of abilitySelectMap" [value]="ability.value">
+          {{ability.key}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <button class='character-edit--spell-list--controls--add' mat-raised-button color=primary (click)='addSpell()'>Add Spell</button>
+  </div>
+  <div *ngIf='character.cantripsList.length' class='character-edit--spell-list--level'>
+    <h4 class='character-edit--spell-list--level--header'>Cantrips</h4>
+    <mat-action-list>
+      <button class='character-edit--spell-list--level--spell' *ngFor='let spell of character.cantripsList' mat-list-item (click)="selectSpell(spell)">{{spell.name}} ({{spell.isVerbal ? 'V' : ''}}{{spell.isSomatic ? 'S':''}}{{spell.hasComponents ? 'M' : ''}})</button>
+    </mat-action-list>
+  </div>
+  <div *ngIf='character.spellList1.length' class='character-edit--spell-list--level'>
+    <h4 class='character-edit--spell-list--level--header'>Level 1</h4>
+    <mat-action-list>
+      <button class='character-edit--spell-list--level--spell' *ngFor='let spell of character.spellList1' mat-list-item (click)="selectSpell(spell)">{{spell.name}} ({{spell.isVerbal ? 'V' : ''}}{{spell.isSomatic ? 'S':''}}{{spell.hasComponents ? 'M' : ''}})</button>
+    </mat-action-list>
+  </div>
+  <div *ngIf='character.spellList2.length' class='character-edit--spell-list--level'>
+    <h4 class='character-edit--spell-list--level--header'>Level 2</h4>
+    <mat-action-list>
+      <button class='character-edit--spell-list--level--spell' *ngFor='let spell of character.spellList2' mat-list-item (click)="selectSpell(spell)">{{spell.name}} ({{spell.isVerbal ? 'V' : ''}}{{spell.isSomatic ? 'S':''}}{{spell.hasComponents ? 'M' : ''}})</button>
+    </mat-action-list>
+  </div>
+  <div *ngIf='character.spellList3.length' class='character-edit--spell-list--level'>
+    <h4 class='character-edit--spell-list--level--header'>Level 3</h4>
+    <mat-action-list>
+      <button class='character-edit--spell-list--level--spell' *ngFor='let spell of character.spellList3' mat-list-item (click)="selectSpell(spell)">{{spell.name}} ({{spell.isVerbal ? 'V' : ''}}{{spell.isSomatic ? 'S':''}}{{spell.hasComponents ? 'M' : ''}})</button>
+    </mat-action-list>
+  </div>
+  <div *ngIf='character.spellList4.length' class='character-edit--spell-list--level'>
+    <h4 class='character-edit--spell-list--level--header'>Level 4</h4>
+    <mat-action-list>
+      <button class='character-edit--spell-list--level--spell' *ngFor='let spell of character.spellList4' mat-list-item (click)="selectSpell(spell)">{{spell.name}} ({{spell.isVerbal ? 'V' : ''}}{{spell.isSomatic ? 'S':''}}{{spell.hasComponents ? 'M' : ''}})</button>
+    </mat-action-list>
+  </div>
+  <div *ngIf='character.spellList5.length' class='character-edit--spell-list--level'>
+    <h4 class='character-edit--spell-list--level--header'>Level 5</h4>
+    <mat-action-list>
+      <button class='character-edit--spell-list--level--spell' *ngFor='let spell of character.spellList5' mat-list-item (click)="selectSpell(spell)">{{spell.name}} ({{spell.isVerbal ? 'V' : ''}}{{spell.isSomatic ? 'S':''}}{{spell.hasComponents ? 'M' : ''}})</button>
+    </mat-action-list>
+  </div>
+  <div *ngIf='character.spellList6.length' class='character-edit--spell-list--level'>
+    <h4 class='character-edit--spell-list--level--header'>Level 6</h4>
+    <mat-action-list>
+      <button class='character-edit--spell-list--level--spell' *ngFor='let spell of character.spellList6' mat-list-item (click)="selectSpell(spell)">{{spell.name}} ({{spell.isVerbal ? 'V' : ''}}{{spell.isSomatic ? 'S':''}}{{spell.hasComponents ? 'M' : ''}})</button>
+    </mat-action-list>
+  </div>
+  <div *ngIf='character.spellList7.length' class='character-edit--spell-list--level'>
+    <h4 class='character-edit--spell-list--level--header'>Level 7</h4>
+    <mat-action-list>
+      <button class='character-edit--spell-list--level--spell' *ngFor='let spell of character.spellList7' mat-list-item (click)="selectSpell(spell)">{{spell.name}} ({{spell.isVerbal ? 'V' : ''}}{{spell.isSomatic ? 'S':''}}{{spell.hasComponents ? 'M' : ''}})</button>
+    </mat-action-list>
+  </div>
+  <div *ngIf='character.spellList8.length' class='character-edit--spell-list--level'>
+    <h4 class='character-edit--spell-list--level--header'>Level 8</h4>
+    <mat-action-list>
+      <button class='character-edit--spell-list--level--spell' *ngFor='let spell of character.spellList8' mat-list-item (click)="selectSpell(spell)">{{spell.name}} ({{spell.isVerbal ? 'V' : ''}}{{spell.isSomatic ? 'S':''}}{{spell.hasComponents ? 'M' : ''}})</button>
+    </mat-action-list>
+  </div>
+  <div *ngIf='character.spellList9.length' class='character-edit--spell-list--level'>
+    <h4 class='character-edit--spell-list--level--header'>Level 9</h4>
+    <mat-action-list>
+      <button class='character-edit--spell-list--level--spell' *ngFor='let spell of character.spellList9' mat-list-item (click)="selectSpell(spell)">{{spell.name}} ({{spell.isVerbal ? 'V' : ''}}{{spell.isSomatic ? 'S':''}}{{spell.hasComponents ? 'M' : ''}})</button>
+    </mat-action-list>
+  </div>
+</div>

@@ -1,0 +1,45 @@
+<p class='spell-edit--header'>{{modalName}}</p>
+<div>
+  <mat-form-field class='spell-edit--field'>
+    <input matNativeControl type='text' placeholder='Spell Name' [(ngModel)]="spell.name">
+  </mat-form-field>
+  <mat-form-field class='spell-edit--field'>
+    <mat-label>Spell Level</mat-label>
+    <mat-select [(ngModel)]='spell.level'>
+      <mat-option *ngFor="let spellLevel of spellLevelSelectMap" [value]="spellLevel.value">
+        {{spellLevel.key}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field class='spell-edit--field'>
+    <input matNativeControl type='text' placeholder='Casting Time' [(ngModel)]="spell.castingTime">
+  </mat-form-field>
+  <mat-form-field class='spell-edit--field'>
+    <input matNativeControl type='text' placeholder='Range' [(ngModel)]="spell.range">
+  </mat-form-field>
+  <mat-form-field class='spell-edit--field'>
+    <input matNativeControl type='text' placeholder='Duration' [(ngModel)]="spell.duration">
+  </mat-form-field>
+  <mat-checkbox class="spell-edit--field-checkbox" [(ngModel)]="spell.isVerbal">Verbal</mat-checkbox>
+  <mat-checkbox class="spell-edit--field-checkbox" [(ngModel)]="spell.isSomatic">Somatic</mat-checkbox>
+  <mat-checkbox class="spell-edit--field-checkbox" [(ngModel)]="spell.hasComponents">Material</mat-checkbox>
+  <mat-form-field *ngIf='spell.hasComponents' class='spell-edit--field'>
+    <input matNativeControl type='text' placeholder='Materials' [(ngModel)]="spell.components">
+  </mat-form-field>
+  <mat-divider class='spell-edit--divider'></mat-divider>
+  <mat-checkbox class="spell-edit--field-checkbox" [(ngModel)]="spell.isSave">Attack Roll</mat-checkbox>
+  <mat-checkbox class="spell-edit--field-checkbox" [(ngModel)]="spell.isAttack">Spell Save</mat-checkbox>
+  <mat-form-field class='spell-edit--field'>
+    <mat-label>Default Spell Ability</mat-label>
+    <mat-select [(ngModel)]='spell.spellcastingAbility'>
+      <mat-option *ngFor="let ability of abilitySelectMap" [value]="ability.value">
+        {{ability.key}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field class='spell-edit--field'>
+    <textarea class='spell-edit--description' matNativeControl placeholder='Spell Description' [(ngModel)]="spell.description"></textarea>
+  </mat-form-field>
+  <button class='spell-edit--save' mat-raised-button color=primary (click)='addSpell()'>Save</button>
+  <button class='spell-edit--delete' mat-raised-button color=error (click)='deleteSpell()'>{{addMode ? 'Cancel' : 'Delete'}}</button>
+</div>
